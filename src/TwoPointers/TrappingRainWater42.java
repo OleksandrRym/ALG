@@ -3,36 +3,29 @@ package TwoPointers;
 public class TrappingRainWater42 {
 
     public int trap(int[] height) {
-        int count = 0;
-        int left = 0, right = height.length - 1;
-        int lMax = 0, rMax = 0;
+      int l = 0, r = height.length - 1;
+      int lMax = 0, rMax = 0;
+      int res = 0;
 
-        while (left < right) {
-
-            if (height[left] < height[right]) {
-
-                if (height[left] > lMax) {
-                    lMax = height[left];
-                } else {
-                    count += lMax - height[left];
-                }
-
-                left++;
-
-            } else {
-
-                if (height[right] > rMax) {
-                    rMax = height[right];
-                } else {
-                    count += rMax - height[right];
-                }
-
-                right--;
-
-            }
-        }
-        return count;
+      while (l < r) {
+          if (height[l] < height[r]) {
+              if (height[l] > lMax) {
+                  lMax = height[l];
+              } else {
+                  res += lMax - height[l];
+              }
+              l++;
+          }
+          else {
+              if (height[r] > rMax) {
+                  rMax = height[r];
+              }else {
+                  res += rMax - height[r];
+              }
+              r--;
+          }
+      }
+      return res;
     }
-
 
 }
