@@ -32,7 +32,6 @@ public class FindTriangularSumOfAnArray2221 {
     public static void main(String[] args) {
         FindTriangularSumOfAnArray2221 findTriangularSumOfAnArray2221 = new FindTriangularSumOfAnArray2221();
         int[] arr = {1, 2, 3, 4, 5};
-        System.out.println(
-                findTriangularSumOfAnArray2221.triangularSum(arr));
+        System.out.println(findTriangularSumOfAnArray2221.triangularSum2(arr));
     }
 }
